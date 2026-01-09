@@ -76,7 +76,6 @@ class EStore {
     smutex_t fineMutexes[INVENTORY_SIZE];
     smutex_t shippingLock;
     smutex_t discountLock;
-    // TODO: More needed here.
 
     public:
 

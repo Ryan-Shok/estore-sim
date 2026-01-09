@@ -85,7 +85,6 @@ enqueueStops(int num)
         stopReq.handler = stop_handler;
         taskQueue->enqueue(stopReq);
     }
-    // TODO: Your code here.
 }
 
 SupplierRequestGenerator::

@@ -143,17 +143,6 @@ void sthread_join(sthread_t thrd)
 }
 
 
-
-/*
- * WARNING:
- * Do not use sleep for synchronizing threads that 
- * should be waiting for events (using condition variables)!
- * Sleep should only be used to wait for a specified amount
- * of time! (If you find yourself looping on a predicate
- * and calling sleep in the loop, you probably are using
- * it incorrectly! We will deduct points from your grade
- * if you do this!
- */
 void sthread_sleep(unsigned int seconds, unsigned int nanoseconds)
 {
     struct timespec rqt;

@@ -11,7 +11,6 @@
 #define MAX_PRICE         1000000
 #define MAX_SHIPPING_COST 10000
 
-// Forward declaration. Do not remove!!
 class EStore;
 
 enum SupplierRequestTypes {

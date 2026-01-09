@@ -8,7 +8,6 @@
 
 using namespace std;
 
-
 Item::
 Item() : valid(false)
 { }
@@ -32,7 +31,6 @@ EStore(bool enableFineMode)
     smutex_init(&discountLock);
     storeDiscount = 0;
     shippingCost = 3.0;
-    // TODO: Your code here.
 }
 
 EStore::
@@ -46,7 +44,6 @@ EStore::
     }
     smutex_destroy(&shippingLock);
     smutex_destroy(&discountLock);
-    // TODO: Your code here.
 }
 
 /*
@@ -112,7 +109,6 @@ buyItem(int item_id, double budget)
         inventory[item_id].quantity -= 1;
         smutex_unlock(&mutex);
     }
-    // TODO: Your code here.
 }
 
 /*
@@ -134,26 +130,10 @@ buyItem(int item_id, double budget)
  *      two customers are not trying to buy any of the same items),
  *      then their orders must be processed at the same time.
  *
- *      For the purposes of this lab, it is OK for the store
- *      discount and shipping cost to change while an order is being
- *      processed.
- *
  *      The cost of a purchase of many items is the sum of the
  *      costs of purchasing each item individually. The purchase
  *      cost of an individual item is covered above in the
  *      description of buyItem.
- *
- *      Challenge: For bonus points, implement a version of this
- *      method that will wait until the order can be fulfilled
- *      instead of giving up. The implementation should be efficient
- *      in that it should not wake up threads unecessarily. For
- *      instance, if an item decreases in price, only threads that
- *      are waiting to buy an order that includes that item should be
- *      signaled (though all such threads should be signaled).
- *
- *      Challenge: For bonus points, ensure that the shipping cost
- *      and store discount does not change while processing an
- *      order.
  *
  * Results:
  *      None.
@@ -213,7 +193,6 @@ buyManyItems(vector<int>* item_ids, double budget)
         }
     }
     return;
-    // TODO: Your code here.
 }
 
 /*
@@ -274,7 +253,6 @@ addItem(int item_id, int quantity, double price, double discount)
 
         smutex_unlock(&fineMutexes[item_id]);
     }
-    // TODO: Your code here.
 
     return;
 
@@ -298,7 +276,6 @@ addItem(int item_id, int quantity, double price, double discount)
 void EStore::
 removeItem(int item_id)
 {
-    // TODO: Your code here.
     if (!fineModeEnabled())
     {
         // only allow one thread to access the shared state
@@ -352,7 +329,6 @@ removeItem(int item_id)
 void EStore::
 addStock(int item_id, int count)
 {
-    // TODO: Your code here.
     if (!fineModeEnabled())
     {
         // only allow one thread to access the shared state
@@ -407,7 +383,6 @@ addStock(int item_id, int count)
 void EStore::
 priceItem(int item_id, double price)
 {
-    // TODO: Your code here.
     if (!fineModeEnabled())
     {
         // only allow one thread to access the shared state
@@ -465,7 +440,6 @@ priceItem(int item_id, double price)
 void EStore::
 discountItem(int item_id, double discount)
 {
-    // TODO: Your code here.
     if (!fineModeEnabled())
     {
         // only allow one thread to access the shared state
@@ -522,7 +496,6 @@ discountItem(int item_id, double discount)
 void EStore::
 setShippingCost(double cost)
 {
-    // TODO: Your code here.
     if (!fineModeEnabled())
     {
         // only allow one thread to access the shared state
@@ -595,5 +568,4 @@ setStoreDiscount(double discount)
     }
 
     return;
-    // TODO: Your code here.
 }

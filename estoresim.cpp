@@ -53,7 +53,6 @@ supplierGenerator(void* arg)
     // enqueue the max amount of tasks and thread stoppers
     supplyGen.enqueueTasks(sim->maxTasks, &(sim->store));
     supplyGen.enqueueStops(sim->numSuppliers);
-    // TODO: Your code here.
     sthread_exit();
     return NULL; // Keep compiler happy.
 }
@@ -92,7 +91,6 @@ customerGenerator(void* arg)
     // enqueue the max amounts of tasks and thread stoppers
     customerGen.enqueueTasks(sim->maxTasks, &(sim->store));
     customerGen.enqueueStops(sim->numCustomers);
-    // TODO: Your code here.
     sthread_exit();
     return NULL; // Keep compiler happy.
 }
@@ -119,7 +117,6 @@ supplier(void* arg)
     // for each of these supplier threads dequeue a task and handle it
     Task task = sim->supplierTasks.dequeue();
     task.handler(task.arg);
-    // TODO: Your code here.
     sthread_exit();
     return NULL; // Keep compiler happy.
 }
@@ -146,7 +143,6 @@ customer(void* arg)
     // for each of these customer threads dequeue a task and handle it
     Task task = sim->customerTasks.dequeue();
     task.handler(task.arg);
-    // TODO: Your code here.
     sthread_exit();
     return NULL; // Keep compiler happy.
 }
@@ -167,7 +163,6 @@ customer(void* arg)
  *      should wait until all of them exit, at which point it
  *      should return.
  *
- *      Hint: Use sthread_join.
  *
  * Results:
  *      None.
@@ -218,7 +213,6 @@ startSimulation(int numSuppliers, int numCustomers, int maxTasks, bool useFineMo
         sthread_join(customerArr[i]);
     }
 
-    // TODO: Your code here.
 }
 
 int main(int argc, char** argv)
@@ -226,8 +220,6 @@ int main(int argc, char** argv)
     bool useFineMode = false;
 
     // Seed the random number generator.
-    // You can remove this line or set it to some constant to get deterministic
-    // results, but make sure you put it back before turning in.
     srand(time(NULL));
 
     if (argc > 1)

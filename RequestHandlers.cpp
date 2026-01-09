@@ -28,7 +28,6 @@ add_item_handler(void* args)
     // print arguments info
     printf("Handling AddItemReq: item_id - %d, quantity - %d, price - $%.2f, discount - %.2f\n", req->item_id, req->quantity, req->price, req->discount);
     free(req);
-    // TODO: Your code here.
 }
 
 /*
@@ -54,7 +53,6 @@ remove_item_handler(void* args)
     // print arguments info
     printf("Handling RemoveItemReq: item_id - %d\n", req->item_id);
     free(req);
-    // TODO: Your code here.
 }
 
 /*
@@ -80,7 +78,6 @@ add_stock_handler(void* args)
     // print arguments info
     printf("Handling AddStockReq: item_id - %d, additional_stock - %d\n", req->item_id, req->additional_stock);
     free(req);
-    // TODO: Your code here.
 }
 
 /*
@@ -106,7 +103,6 @@ change_item_price_handler(void* args)
     // print arguments info
     printf("Handling ChangeItemPriceReq: item_id - %d, new_price - $%.2f\n", req->item_id, req->new_price);
     free(req);
-    // TODO: Your code here.
 }
 
 /*
@@ -132,7 +128,6 @@ change_item_discount_handler(void* args)
     // print arguments info
     printf("Handling ChangeItemDiscountReq: item_id - %d, new_discount - %.2f\n", req->item_id, req->new_discount);
     free(req);
-    // TODO: Your code here.
 }
 
 /*
@@ -158,7 +153,6 @@ set_shipping_cost_handler(void* args)
     // print arguments info
     printf("Handling SetShippingCostReq: new_shipping - $%.2f\n", req->new_cost);
     free(req);
-    // TODO: Your code here.
 }
 
 /*
@@ -184,7 +178,6 @@ set_store_discount_handler(void* args)
     // print arguments info
     printf("Handling SetStoreDiscountReq: new_discount - %.2f\n", req->new_discount);
     free(req);
-    // TODO: Your code here.
 }
 
 /*
@@ -210,7 +203,6 @@ buy_item_handler(void* args)
     // print arguments info
     printf("Handling BuyItemReq: item_id - %d, budget - $%.2f\n", req->item_id, req->budget);
     free(req);
-    // TODO: Your code here.
 }
 
 /*
@@ -241,7 +233,6 @@ buy_many_items_handler(void* args)
     }
     printf(", budget - $%.2f\n", req->budget);
     free(req);
-    // TODO: Your code here.
 }
 
 /*
@@ -261,5 +252,4 @@ stop_handler(void* args)
     // print info that you are stopping the calling thread
     printf("Handling StopHandlerReq : Quitting.\n");
     sthread_exit();
-    // TODO: Your code here.
 }

@@ -23,14 +23,7 @@ void smutex_unlock(smutex_t *mutex);
 void scond_init(scond_t *cond);
 void scond_destroy(scond_t *cond);
 
-/*
- * Condition variables are always associated with state
- * variables that you access before signalling, broadcasting,
- * or waiting. To access the state variable, you must hold
- * the associated mutex. To help enforce this, you 
- * are required to hold the mutex and pass it in as an
- * argument to these functions.
- */
+
 void scond_signal(scond_t *cond, smutex_t *mutex);
 void scond_broadcast(scond_t *cond, smutex_t *mutex);
 void scond_wait(scond_t *cond, smutex_t *mutex);
@@ -48,16 +41,7 @@ void sthread_exit(void);
  */
 void sthread_join(sthread_t thrd);
 
-/*
- * WARNING:
- * Do not use sleep for synchronizing threads that 
- * should be waiting for events (using condition variables)!
- * Sleep should only be used to wait for a specified amount
- * of time! (If you find yourself looping on a predicate
- * and calling sleep in the loop, you probably are using
- * it incorrectly! We will deduct points from your grade
- * if you do this!)
- */
+
 void sthread_sleep(unsigned int seconds, unsigned int nanoseconds);
 
 

@@ -34,9 +34,6 @@ clean:
 
 .PHONY: clean always
 
-LAB_NUM = 3
-LAB_MAIN_NAME = lab$(LAB_NUM)
-
 always: 
 	@:
 
@@ -44,8 +41,6 @@ realclean: clean
 	@echo + realclean
 	$(V)rm -rf $(DISTDIR) $(DISTDIR).tgz
 
-check:
-	$(V)/bin/bash ./check-lab.sh . 
 
 tidy: always
 	git clean -dff

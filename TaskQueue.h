@@ -22,7 +22,6 @@ struct Task {
  */
 class TaskQueue {
     private:
-    // TODO: More needed here.
     int queueSize;
     std::queue<Task> queue;
     smutex_t mutex;

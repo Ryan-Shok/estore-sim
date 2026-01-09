@@ -8,7 +8,6 @@ TaskQueue()
     smutex_init(&mutex);
     scond_init(&cond);
     queueSize = 0;
-    // TODO: Your code here.
 }
 
 TaskQueue::
@@ -16,7 +15,6 @@ TaskQueue::
 {
     smutex_destroy(&mutex);
     scond_destroy(&cond);
-    // TODO: Your code here.
 }
 
 /*
@@ -37,7 +35,6 @@ size()
     int tmpSize = queueSize;
     smutex_unlock(&mutex);
     return tmpSize;
-    // TODO: Your code here.
 }
 
 /*
@@ -62,7 +59,6 @@ empty()
         empty = true;
     }
     smutex_unlock(&mutex);
-    // TODO: Your code here.
     return empty; // Keep compiler happy until routine done.
 }
 
@@ -89,7 +85,6 @@ enqueue(Task task)
     // wake any waiters
     scond_broadcast(&cond, &mutex);
     smutex_unlock(&mutex);
-    // TODO: Your code here.
 }
 
 /*
@@ -122,7 +117,6 @@ dequeue()
     // wake any waiters
     scond_broadcast(&cond, &mutex);
     smutex_unlock(&mutex);
-    // TODO: Your code here.
     return task; // Keep compiler happy until routine done.
 }
 
